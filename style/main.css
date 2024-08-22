@@ -1,0 +1,316 @@
+@import url("reset.css");
+
+:root{
+    --soft-red:hsl(7, 99%, 70%);
+    --yellow:hsl(51, 100%, 49%);
+    --dark-desaturated-cyan:hsl(167, 40%, 24%);
+    --dark-blue:hsl(198, 62%, 26%);
+    --dark-moderate-cyan:hsl(168, 34%, 41%);
+
+    --very-dark-desaturated-blue:hsl(212, 27%, 19%);
+    --very-dark-grayish-blue:hsl(213, 9%, 39%);
+    --dark-grayish-blue:hsl(232, 10%, 55%);
+    --grayish-blue:hsl(210, 4%, 67%);
+}
+
+*{
+    margin: 0;
+    padding:0;
+    font-family: "Barlow";
+    font-weight: 600;
+}
+
+h1,h2{
+    font-family: "Fraunces";
+    font-weight: 900;
+}
+
+ul,nav{
+    list-style: none;
+}
+
+/* Styling the header */
+
+header{
+    padding:1.5rem 1rem;
+    height: 120vw;
+
+    background-image: url("../images/mobile/image-header.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    gap:3rem;
+}
+
+.top-nav{
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap:2rem;
+}
+
+#header-title{
+    color:white;
+}
+
+/* Styling the navigation bar */
+
+#menu{
+    cursor: pointer;
+}
+
+.navbar{
+    background-color: white;
+    padding:2rem;
+    width:100%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:1.5rem;
+
+    position: absolute;
+    left:50%;
+    transform: translate(-50%);
+
+    animation-name: slide;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slide {
+    from {top:3.3rem;}
+    to {top:3.5rem;}
+}
+
+.navbar::before{
+    content: "";
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 0 0 40px 40px;
+    border-color: transparent transparent white transparent ;
+
+    position: absolute;
+    top:-1.2rem;
+    right:0;
+}
+
+.navbar a{
+    color:var(--dark-grayish-blue);
+    text-decoration: none;
+}
+
+.navbar a:hover{
+    color:var(--very-dark-desaturated-blue);
+}
+
+#contact-link{
+    background-color: var(--yellow);
+    padding:0.7rem 1.4rem;
+    border-radius: 30px;
+
+    color:var(--very-dark-desaturated-blue);
+    font-family: "Fraunces";
+    font-family: 900;
+    font-size: 15px;
+}
+
+#contact-link:hover{
+    opacity: 0.7;
+}
+
+.hidden{
+    display: none;
+}
+
+/* Styling the main now */
+
+/* Styling the two text containers */
+
+.text-container{
+    padding:2.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap:1.5rem;
+}
+
+.text-container_title{
+    color:var(--very-dark-desaturated-blue);
+}
+
+.text-container_text{
+    color:var(--dark-grayish-blue);
+}
+
+.learn-more-button{
+    cursor: pointer;
+    color:var(--very-dark-desaturated-blue);
+    font-family: "Fraunces";
+    font-weight: 700;
+    z-index: 1;
+
+    position: relative;
+    border:none;
+    background-color: transparent;
+}
+
+.learn-more-button::after{
+    content: "";
+    width: 110%;
+    height: 8px;
+    border-radius: 5px;
+    z-index: -1;
+
+    position: absolute;
+    bottom: -2px;
+    left:50%;
+    transform: translate(-50%);
+    opacity: 0.2;
+}
+
+.learn-more-button:hover::after{
+    opacity: 1;
+}
+
+#transform-button::after{
+    background-color:var(--yellow);
+}
+
+#stand-out-button::after{
+    background-color: var(--soft-red);
+}
+
+/* Styling the graphic and photography containers*/
+
+.graphic-section{
+    padding:24rem 1rem 3rem 1rem;
+    color:var(--dark-desaturated-cyan);
+    background-image: url("../images/mobile/image-graphic-design.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap:1.5rem;
+}
+
+.photography-section{
+    padding:24rem 1rem 3rem 1rem;
+    color:var(--dark-blue);
+    background-image: url("../images/mobile/image-photography.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap:1.5rem;
+}
+
+/* Styling the client testimonials section*/
+
+.clients-section{
+    padding:3rem 1rem 5rem 1rem;
+
+    display: flex;
+    flex-direction: column;
+    gap:3rem;
+}
+
+#clients-section_title{
+    color:var(--grayish-blue);
+    text-align: center;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 3px;
+}
+
+.client-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap:1.5rem;
+}
+
+.client-image{
+    width:50px;
+    border-radius: 50%;
+}
+
+.client-review{
+    color:var(--very-dark-grayish-blue);
+}
+
+.author h2{
+    color:var(--very-dark-desaturated-blue);
+    font-size: 18px;
+}
+
+.author p{
+    color:var(--grayish-blue);
+    font-size: 15px;
+}
+
+.images-section{
+    display: flex;
+    flex-wrap:wrap;
+}
+
+.images-section picture{
+    width: 50%;
+}
+
+/* Styling the footer */
+
+footer{
+    padding:3rem 2rem;
+    background-color: var(--dark-moderate-cyan);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:3rem;
+}
+
+#logo{
+    filter: brightness(0) saturate(100%) invert(27%) sepia(43%) saturate(521%) hue-rotate(116deg) brightness(89%) contrast(88%);
+}
+
+.footer-navigation{
+    display: flex;
+    gap:2.5rem;
+}
+
+.footer-navigation a{
+    text-decoration: none;
+    color:var(--dark-desaturated-cyan);
+}
+
+.footer-navigation a:hover{
+    color: white;
+}
+
+.social-links{
+    display: flex;
+    gap:1.5rem;
+}
+
+.social-links img:hover{
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(115deg) brightness(98%) contrast(107%);
+}
