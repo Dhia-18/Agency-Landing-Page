@@ -1,7 +1,6 @@
 const menuButton = document.getElementById("menu");
-const navBar = document.querySelector(".navbar");
+const navBar = document.querySelector(".top-nav-bar");
 
 menuButton.addEventListener("click",()=>{
-    menuButton.style.opacity=0.5;
-    navBar.classList.toggle("hidden");
+    navBar.classList.toggle("active");
 });
